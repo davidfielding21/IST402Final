@@ -1,0 +1,50 @@
+<html>
+
+<head>
+     <title>HIT Quality Calculator</title>
+     <meta charset="utf-8">
+
+    <style type="text/css">
+    </style>
+
+     <h1 style = "margin-left:27%"><b>Calculate the Quality of Your HIT</h1>
+
+     <script language = "javascript">
+     function timeCalc()
+     {
+     	var result = (document.form.questions.value)*(.172)
+     	document.form.mins.value = result.toFixed(1);
+     }
+     function payCalc()
+     {
+     	var result = (document.form.questions.value)*(.172)
+     	var result2 = (document.form.questions2.value)/(result)
+     	document.form.mins2.value = result2.toFixed(2);
+     }
+     function qualityScore()
+     {
+     	var result3 = ((document.form.mins2.value)*60)/(7.25)
+     	document.form.score.value = result3.toFixed(1);
+     }
+     </script>
+</head>
+
+<body bgcolor="#D3D3D3">
+	<form name="form">
+		<p style = "margin-left:27%">Enter # of Questions on the HIT:</p>
+		<input style = "margin-left:27%" type="text" name="questions" size="3">
+		<input type="button" value="Enter" name="enter" onClick="timeCalc()"><br>
+		<p style = "margin-left:27%">Estimated Completion Time:</p>
+		<input style = "margin-left:27%" type="text" name="mins" size="3">
+		minutes
+		<p style = "margin-left:27%">Enter the Pay of the HIT (USD):</p>
+		<input style = "margin-left:27%" type="text" name="questions2" size="3">
+		<input type="button" value="Enter" name="enter2" onClick="payCalc()"><br>
+		<p style = "margin-left:27%">Estimated Pay per Minute:</p>
+		<input style = "margin-left:27%" type="text" name="mins2" size="3"> USD
+		<p style = "margin-left:27%">Calculated Quality Score<br>1 or Higher is Most Desirable <br> <input type="button" value="Enter" name="enter" onClick="qualityScore()"></p>
+		<input style = "margin-left:27%" type="text" name="score" size="3">
+	</form>
+</body>
+
+</html>
